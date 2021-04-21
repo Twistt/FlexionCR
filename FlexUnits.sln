@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31129.286
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FlexUnits", "FlexUnits.csproj", "{8E7BD362-834E-49E6-8110-D030858ADADE}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FlexUnits", ".\FlexUnits\FlexUnits.csproj", "{8E7BD362-834E-49E6-8110-D030858ADADE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConversionTests", "..\ConversionTests\ConversionTests.csproj", "{7FFBFEA8-8697-4E94-8DAD-ECB42C9ACDE3}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConversionTests", ".\ConversionTests\ConversionTests.csproj", "{7FFBFEA8-8697-4E94-8DAD-ECB42C9ACDE3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
