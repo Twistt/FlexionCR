@@ -1,0 +1,20 @@
+<h1 id="tableLabel">Unit Of Measure List</h1>
+
+<p>This component demonstrates fetching data from the server.</p>
+<p style=" font-style:italic;">note: Type is an Enum value for Volume and Temperature and is used to make sure the types match for conversions</p>
+<p *ngIf="!conversions"><em>Loading...</em></p>
+
+<table class='table table-striped' aria-labelledby="tableLabel" *ngIf="conversions">
+  <thead>
+    <tr>
+      <th>UOM</th>
+      <th>Type</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let conversion of conversions">
+      <td>{{ conversion.uom }}</td>
+      <td>{{ conversion.type }}</td>
+    </tr>
+  </tbody>
+</table>

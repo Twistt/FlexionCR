@@ -1,0 +1,58 @@
+<h1>Unit Converter</h1>
+
+<div class="container">
+  <div class="row">
+    <div class="col">
+
+
+      <div class="form-group">
+        <label class="form-label">Amount</label>
+        <input class="form-control" type="number" [(ngModel)]="userValue" />
+      </div>
+    </div>
+
+    <div class="col">
+      <div class="form-group">
+        <label class="form-label">From Unit</label>
+        <select [(ngModel)]="selectedFromUOM" class="form-control" *ngIf="conversions">
+          <option *ngFor="let conversion of conversions" [ngValue]="conversion">
+            {{conversion.uom}}
+          </option>
+        </select>
+      </div>
+    </div>
+    <div class="col">
+      <div class="form-group">
+        <label class="form-label">To Unit</label>
+        <select [(ngModel)]="selectedToUOM" class="form-control" *ngIf="conversions">
+          <option *ngFor="let conversion of conversions.where('type', selectedFromUOM.type)" [ngValue]="conversion">
+            {{conversion.uom}}
+          </option>
+        </select>
+      </div>
+    </div>
+    <div class="col">
+      <div class="form-group">
+        <label class="form-label">Check Answer</label>
+        <input class="form-control" type="number" [(ngModel)]="studentValue" />
+      </div>
+    </div>
+    <div class="col">
+      <div class="form-group" *ngIf="selectedFromUOM">
+        <label class="form-label">{{selectedFromUOM.uom}} to {{selectedToUOM.uom}}</label>
+        <input type="button" class="btn btn-primary form-control" (click)="calculate()" value="Calculate" />
+      </div>
+    </div>
+  </div>
+  <div class="row justify-content-md-center text-primary">
+    <div class="col-md-auto rounded bg-danger" style="padding:10px; color:white;" *ngIf="calculationResult && calculationResult != studentValue">
+      {{calculationResult}} is Incorrect
+    </div>
+    <div class="col-md-auto rounded bg-success" style="padding:10px; color:white;" *ngIf="calculationResult && calculationResult === studentValue">
+      {{calculationResult}} is Correct
+    </div>
+    <div class="col-md-auto rounded bg-warning" style="padding:10px; color:white;" *ngIf="!calculationResult || calculationResult ==0 || selectedFromUOM.type != selectedToUOM.type">
+      Selection is Invalid
+    </div>
+  </div>
+</div>
